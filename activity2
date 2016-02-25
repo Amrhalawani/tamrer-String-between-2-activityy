@@ -1,0 +1,26 @@
+
+
+package com.test.hal.amr.testbetweenactivity;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.TextView;
+
+//خد بالك انا في الاكتيفتي بتاعت الجافا فايل دة فاضيه تماما
+public class MainActivity extends Activity {
+
+    final  static String msg_key="AAA.com.test.hal.amr.msg_key";
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        //setContentView(R.layout.activity_main);
+        Intent intent = getIntent();  
+    String message = intent.getStringExtra(msg_key); // باخد القيمه المرره عن طريق  المفتاح دة 
+        TextView textView = new TextView(this); // هنا مفيش اي تكست في الفيو فانا بعمل واحد جديد هنا في الجافا فايل 
+        textView.setText(message); // وبعدين التيكست دة هحط فيه النتيجة الممرره
+        textView.setTextSize(50); // بحط حجم للتيكست
+        setContentView(textView); // مش عارف :D 
+
+}}
