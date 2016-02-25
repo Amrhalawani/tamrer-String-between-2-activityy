@@ -1,0 +1,30 @@
+package com.test.hal.amr.testbetweenactivity;
+
+//https://www.youtube.com/watch?v=egkzzqQJpb8&list=PLMYF6NkLrdN9TGwxfJUN7HeLvExdfXbgn&index=36
+
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+
+public class Send extends AppCompatActivity {
+    EditText editText;
+    Button button;
+    final static String msg_key = "AAA.com.test.hal.amr.msg_key"; // دة مفتاح بستخدمه في ال2اكتيفيتي  عشان امرر فاليو بالبوتاكسترا 
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_send);
+        editText = (EditText) findViewById(R.id.editText);
+        button = (Button) findViewById(R.id.button);
+    }
+    public void SendView(View view) {
+        String pass = editText.getText().toString(); // اللي باخدة من المستخدم بحوله لاسترنج كله
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra(msg_key, pass); // المسؤل عن تمرير المتغير ( المقتاح و الفاليو) 
+        startActivity(intent);
+    }
+}
